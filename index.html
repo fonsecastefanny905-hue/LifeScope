@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeScope | Guía Profesional Completa - Colombia 2026</title>
+    <meta name="description" content="Información oficial de carreras, salarios, universidades, SENA y beneficios para estudiantes de 9°, 10° y 11° grado en Boyacá y Colombia.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fondo: '#0F172A',
+                        tarjeta: '#1E293B',
+                        azul: '#38BDF8',
+                        azulFuerte: '#0EA5E9',
+                        amarillo: '#FBBF24',
+                        rosa: '#F472B6',
+                        verde: '#34D399',
+                        morado: '#A78BFA',
+                        naranja: '#FB923C',
+                        texto: '#FFFFFF',
+                        textoSecundario: '#FFFFFF',
+                        borde: 'rgba(255,255,255,0.15)'
+                    },
+                    fontFamily: { inter: ['Inter', 'sans-serif'] },
+                    boxShadow: {
+                        'elegante': '0 10px 30px -15px rgba(56,189,248,0.15)',
+                        'resaltado': '0 15px 40px -10px rgba(56,189,248,0.25)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            background: linear-gradient(135deg, #1c2436 0%, #1E293B 100%);
+            color: #ffffff !important;
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        p, h1, h2, h3, h4, h5, h6, span, label, strong, li, div, button {
+            color: #ffffff !important;
+        }
+        .pagina { display: none; animation: aparecer 0.4s ease-out; }
+        .pagina.activa { display: block; }
+        @keyframes aparecer {
+            from { opacity: 0; transform: translateY(18px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .tarjeta {
+            background: rgba(30,41,59,0.85);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--borde);
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.3s ease;
+        }
+        .tarjeta:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(56,189,248,0.18);
+            border-color: rgba(56,189,248,0.3);
+        }
+        .boton {
+            transition: all 0.25s ease;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+        .boton:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(56,189,248,0.2); }
+        .gradiente-texto {
+            background: linear-gradient(90deg, #38BDF8, #ecc953);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent !important;
+        }
+        .etiqueta {
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 999px;
+            display: inline-block;
+        }
+        .dato { display: flex; align-items: flex-start; gap: 8px; margin: 6px 0; font-size: 0.9rem; }
+        .dato strong { color: #38BDF8 !important; min-width: 140px; flex-shrink: 0; }
+        .barra-progreso { height: 12px; background: rgba(255,255,255,0.2); border-radius: 999px; overflow: hidden; }
+        .relleno { height: 100%; transition: width 1s ease-out; }
+        header { background: rgba(15,23,42,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--borde); position: sticky; top: 0; z-index: 100; }
+        .contenedor { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+        @media (max-width: 768px) { .dato { flex-direction: column; gap: 2px; } .dato strong { min-width: auto; } }
+        #test input[type="radio"], #talento input[type="radio"] {
+            accent-color: #38BDF8;
+        }
+        .oculto { display: none !important; }
+    </style>
+</head>
+<body>
+
+<!-- BARRA DE NAVEGACIÓN -->
+<header>
+    <div class="contenedor py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+        <!-- Lado Izquierdo: Logo LifeScope + Nombre -->
+        <div class="flex items-center gap-3">
+            <img src="logo.png" alt="Logo LifeScope" class="h-12 w-12 object-contain rounded-xl">
+            <h1 class="text-xl font-bold">Life<span class="text-amarillo">Scope</span></h1>
+        </div>
+
+        <!-- Centro: Menú de navegación -->
+        <nav class="flex flex-wrap justify-center gap-2 text-sm">
+            <button onclick="irA('inicio')" class="boton px-3 py-2 hover:bg-white/10">Inicio</button>
+            <button onclick="irA('test')" class="boton px-3 py-2 text-amarillo font-semibold">Test Profesional</button>
+            <button onclick="irA('talento')" class="boton px-3 py-2 text-rosa font-semibold">Mi Talento & Emprendimiento</button>
+            <button onclick="irA('carreras')" class="boton px-3 py-2 hover:bg-white/10">Explorar Carreras</button>
+            <button onclick="irA('grados')" class="boton px-3 py-2 hover:bg-white/10">Tu Grado</button>
+            <button onclick="irA('universidades')" class="boton px-3 py-2 hover:bg-white/10">Universidades</button>
+            <button onclick="irA('sena')" class="boton px-3 py-2 hover:bg-white/10">SENA</button>
+            <button onclick="irA('opciones')" class="boton px-3 py-2 hover:bg-white/10">Sin Universidad</button>
+            <button onclick="irA('contacto')" class="boton px-4 py-2 bg-azul text-fondo font-bold hover:bg-sky-400">Recursos</button>
+        </nav>
+
+        <!-- Lado Derecho: Logo Colegio -->
+        <div class="flex items-center">
+            <img src="logocolegio.png" alt="Logo Colegio San Nicolás" class="h-12 w-auto object-contain">
+        </div>
+    </div>
+</header>
+
+<main class="contenedor py-8">
+
+<!-- PÁGINA INICIO -->
+<div id="inicio" class="pagina activa">
+    <div class="text-center py-12 md:py-16 max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-5xl font-bold mb-5">Tu guía profesional confiable<br><span class="gradiente-texto">para tomar decisiones seguras</span></h2>
+        <p class="text-lg text-textoSecundario mb-8">Información validada al 2026 sobre carreras, salarios reales, requisitos, instituciones oficiales y beneficios para estudiantes de 9°, 10° y 11° grado en Boyacá y todo Colombia.</p>
+        
+        <div class="grid md:grid-cols-3 gap-5 mb-12">
+            <div class="tarjeta">
+                <h3 class="font-bold text-lg mb-3">📊 Datos oficiales</h3>
+                <p class="text-sm text-textoSecundario">Salarios según Ministerio de Trabajo, costos y requisitos confirmados en universidades y SENA.</p>
+            </div>
+            <div class="tarjeta">
+                <h3 class="font-bold text-lg mb-3">📍 Enfoque local</h3>
+                <p class="text-sm text-textoSecundario">Información detallada de Tunja, UPTC, Sena Boyacá y oportunidades para nuestra región.</p>
+            </div>
+            <div class="tarjeta">
+                <h3 class="font-bold text-lg mb-3">🎯 Orientación clara</h3>
+                <p class="text-sm text-textoSecundario">Sin jerga complicada: duración, beneficios, dificultades y salida laboral explicados sencillamente.</p>
+            </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <button onclick="irA('talento')" class="boton bg-rosa text-fondo px-8 py-3 text-lg font-bold">✨ Descubrir en qué debo emprender</button>
+            <button onclick="irA('test')" class="boton bg-azul text-fondo px-8 py-3 text-lg">Empezar mi Test Profesional</button>
+        </div>
+    </div>
+</div>
+
+<!-- ==============================================
+PÁGINA: MI TALENTO & CREATIVIDAD (LIBRE INTERACTIVO)
+============================================== -->
+<div id="talento" class="pagina">
+    <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+            <h2 class="text-3xl font-bold mb-3 text-rosa">✨ ¿En qué eres bueno? ¡Te enseñamos en qué emprender!</h2>
+            <p class="text-textoSecundario">Escribe abajo lo que te gusta o tus habilidades (ejemplo: <em>"Soy bueno interactuando con las personas, sé cocinar y me gusta preparar postres y recetas"</em>). Al hacer clic en analizar, se desplegará una tarjeta completa con tu presupuesto, consejos de productividad y un mensaje motivacional.</p>
+        </div>
+
+        <!-- SECCIÓN DE ENTRADA DE TEXTO -->
+        <div id="formulario-talento" class="tarjeta space-y-4">
+            <label for="texto-talento" class="block font-semibold text-lg text-amarillo">
+                ✍️ Escribe aquí lo que te apasiona o tus habilidades:
+            </label>
+            <textarea id="texto-talento" rows="4" class="w-full p-4 rounded-xl bg-fondo/80 border border-borde text-white placeholder-slate-400 focus:outline-none focus:border-rosa transition" placeholder="Ejemplo: Soy bueno interactuando con las personas, me gusta cocinar, preparar postres deliciosos y nuevas recetas..."></textarea>
+
+            <div class="flex flex-wrap gap-2 text-xs text-textoSecundario">
+                <span class="font-semibold text-white">Sugerencia rápida (clic aquí):</span>
+                <button type="button" onclick="agregarTexto('Soy bueno interactuando con las personas, me gusta cocinar y sé preparar postres y recetas.')" class="px-3 py-1.5 bg-rosa/20 text-rosa font-semibold rounded-lg hover:bg-rosa/30 transition">🧁 Cocina & Postres</button>
+                <button type="button" onclick="agregarTexto('Me gusta la tecnología, arreglar celulares y programar software.')" class="px-3 py-1.5 bg-azul/20 text-azul font-semibold rounded-lg hover:bg-azul/30 transition">💻 Tecnología & Código</button>
+            </div>
+
+            <button onclick="analizarTalentoLibre()" class="boton w-full bg-rosa text-fondo py-4 text-lg font-bold rounded-xl mt-4 hover:bg-pink-400 shadow-lg">
+                🚀 ¡Analizar mi Talento!
+            </button>
+        </div>
+
+        <!-- TARJETA UNIFICADA DE RESULTADO DE EMPRENDIMIENTO -->
+        <div id="resultado-talento-bloque" class="oculto space-y-6 mt-8">
+            <div class="tarjeta border-2 border-rosa bg-gradient-to-b from-tarjeta via-slate-900 to-pink-950/50 p-6 md:p-8 rounded-2xl shadow-2xl">
+                
+                <!-- Título e Identificación del Perfil -->
+                <div class="border-b border-borde pb-4 mb-6">
+                    <span class="etiqueta bg-rosa/20 text-rosa mb-2">🎯 Diagnóstico de Emprendimiento</span>
+                    <h3 id="talento-titulo" class="text-2xl md:text-3xl font-extrabold text-rosa mb-2"></h3>
+                    <p id="talento-desc" class="text-sm md:text-base text-textoSecundario italic"></p>
+                </div>
+
+                <!-- Bloques de Ideas, Presupuesto y Productividad -->
+                <div class="grid md:grid-cols-2 gap-5 mb-6">
+                    <!-- En qué emprender -->
+                    <div class="bg-fondo/70 p-5 rounded-xl border border-borde md:col-span-2">
+                        <h4 class="font-bold text-amarillo text-lg mb-3 flex items-center gap-2">
+                            💡 Opciones ideales en las que puedes emprender:
+                        </h4>
+                        <ul id="talento-ideas" class="space-y-3 text-sm text-textoSecundario"></ul>
+                    </div>
+
+                    <!-- Presupuesto Estimado -->
+                    <div class="bg-fondo/70 p-5 rounded-xl border border-borde flex flex-col justify-between">
+                        <div>
+                            <h4 class="font-bold text-azul text-lg mb-2 flex items-center gap-2">
+                                💵 Presupuesto Inicial (COP):
+                            </h4>
+                            <div id="talento-presupuesto" class="text-sm text-textoSecundario mb-3"></div>
+                        </div>
+                        <div class="text-xs bg-azul/10 p-3 rounded-lg border border-azul/20 text-textoSecundario">
+                            💡 <strong>Consejo Financiero:</strong> Empieza vendiendo bajo pedido en WhatsApp sin gastar en arriendos ni locales físicos al principio.
+                        </div>
+                    </div>
+
+                    <!-- Consejos de Productividad -->
+                    <div class="bg-fondo/70 p-5 rounded-xl border border-borde flex flex-col justify-between">
+                        <div>
+                            <h4 class="font-bold text-verde text-lg mb-2 flex items-center gap-2">
+                                ⚡ Consejos de Productividad:
+                            </h4>
+                            <div id="talento-productividad" class="text-sm text-textoSecundario mb-3"></div>
+                        </div>
+                        <div class="text-xs bg-verde/10 p-3 rounded-lg border border-verde/20 text-textoSecundario">
+                            🎯 <strong>Organización:</strong> Estandariza tus tiempos de producción y mantén gramajes fijos para no desperdiciar insumos.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CUADRO MOTIVACIONAL DESTACADO -->
+                <div class="bg-gradient-to-r from-pink-900/60 via-purple-900/60 to-slate-900 p-6 rounded-xl border-2 border-pink-500/40 text-center mb-6 shadow-xl">
+                    <span class="text-2xl mb-2 block">🔥 Mensaje Motivacional</span>
+                    <p id="talento-motivacional" class="text-base md:text-lg font-semibold italic text-white leading-relaxed"></p>
+                </div>
+
+                <!-- Primer paso práctico -->
+                <div class="bg-fondo/60 p-4 rounded-xl border border-borde">
+                    <p class="font-semibold mb-1 text-rosa text-sm">📍 Tu primer paso hoy en Boyacá:</p>
+                    <p id="talento-consejo" class="text-xs md:text-sm text-textoSecundario"></p>
+                </div>
+            </div>
+
+            <button onclick="reiniciarTalento()" class="boton w-full bg-tarjeta border border-borde py-3 text-white font-semibold">🔄 Probar con otra habilidad</button>
+        </div>
+    </div>
+</div>
+
+<!-- PÁGINA: TEST PROFESIONAL (72 PREGUNTAS) -->
+<div id="test" class="pagina">
+    <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+            <h2 class="text-3xl font-bold mb-3">Test Profesional Interactivo - 72 Preguntas</h2>
+            <p class="text-textoSecundario">Responde con sinceridad las 72 preguntas para calcular tu afinidad exacta con los perfiles profesionales adaptados a Colombia 2026.</p>
+        </div>
+
+        <div id="formulario-test" class="space-y-6">
+            <h3 class="text-xl font-bold text-amarillo pt-4">Bloque 1: Motivaciones y Estilo de Vida (1 - 12)</h3>
+            <div id="preguntas-b1" class="space-y-5"></div>
+
+            <h3 class="text-xl font-bold text-amarillo pt-4">Bloque 2: Trabajo en Equipo y Liderazgo (13 - 24)</h3>
+            <div id="preguntas-b2" class="space-y-5"></div>
+
+            <h3 class="text-xl font-bold text-amarillo pt-4">Bloque 3: Perfil Psicológico y Resiliencia (25 - 36)</h3>
+            <div id="preguntas-b3" class="space-y-5"></div>
+
+            <h3 class="text-xl font-bold text-amarillo pt-4">Bloque 4: Intereses Científicos, Tecnológicos y Analíticos (37 - 48)</h3>
+            <div id="preguntas-b4" class="space-y-5"></div>
+
+            <h3 class="text-xl font-bold text-amarillo pt-4">Bloque 5: Creatividad, Arte y Comunicación (49 - 60)</h3>
+            <div id="preguntas-b5" class="space-y-5"></div>
+
+            <h3 class="text-xl font-bold text-amarillo pt-4">Bloque 6: Negocios, Impacto Social y Estilo de Vida (61 - 72)</h3>
+            <div id="preguntas-b6" class="space-y-5"></div>
+
+            <button onclick="calcularResultados()" class="boton w-full bg-azul text-fondo py-4 text-lg font-bold rounded-xl mt-6">Ver mis resultados completos</button>
+        </div>
+
+        <div id="resultados-test" class="oculto">
+            <div class="text-center mb-6">
+                <h3 class="text-2xl font-bold mb-2">📊 Tus Perfiles Vocacionales</h3>
+                <p class="text-textoSecundario">Porcentaje de afinidad obtenido con base en tus 72 respuestas</p>
+            </div>
+
+            <div class="tarjeta mb-6 space-y-4">
+                <div>
+                    <div class="flex justify-between mb-1"><span>Empresarial y Administrativo</span><span id="porc-emp">0%</span></div>
+                    <div class="barra-progreso"><div id="barra-emp" class="relleno bg-amarillo" style="width:0%"></div></div>
+                </div>
+                <div>
+                    <div class="flex justify-between mb-1"><span>Social y Salud</span><span id="porc-soc">0%</span></div>
+                    <div class="barra-progreso"><div id="barra-soc" class="relleno bg-rosa" style="width:0%"></div></div>
+                </div>
+                <div>
+                    <div class="flex justify-between mb-1"><span>Ciencias Básicas</span><span id="porc-cie">0%</span></div>
+                    <div class="barra-progreso"><div id="barra-cie" class="relleno bg-azul" style="width:0%"></div></div>
+                </div>
+                <div>
+                    <div class="flex justify-between mb-1"><span>Tecnología e Ingeniería</span><span id="porc-tec">0%</span></div>
+                    <div class="barra-progreso"><div id="barra-tec" class="relleno bg-verde" style="width:0%"></div></div>
+                </div>
+                <div>
+                    <div class="flex justify-between mb-1"><span>Artístico y Comunicación</span><span id="porc-art">0%</span></div>
+                    <div class="barra-progreso"><div id="barra-art" class="relleno bg-morado" style="width:0%"></div></div>
+                </div>
+                <div>
+                    <div class="flex justify-between mb-1"><span>Práctico y Agropecuario</span><span id="porc-pra">0%</span></div>
+                    <div class="barra-progreso"><div id="barra-pra" class="relleno bg-naranja" style="width:0%"></div></div>
+                </div>
+            </div>
+
+            <div id="perfil-detallado" class="tarjeta border-l-4 border-azul">
+                <h4 id="nombre-perfil" class="text-xl font-bold mb-3">Perfil Principal</h4>
+                <p id="descripcion-perfil" class="text-textoSecundario mb-4"></p>
+                
+                <div class="bg-fondo/50 p-4 rounded-lg mb-4">
+                    <p class="font-semibold mb-2">🎓 Carreras recomendadas:</p>
+                    <div id="lista-carreras" class="flex flex-wrap gap-2"></div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                    <div class="bg-fondo/50 p-4 rounded-lg">
+                        <p class="font-semibold mb-2">⏱️ Duración promedio:</p>
+                        <p class="text-sm text-textoSecundario">• Técnico: 6-12 meses<br>• Tecnólogo: 18-24 meses<br>• Profesional: 4-7 años</p>
+                    </div>
+                    <div class="bg-fondo/50 p-4 rounded-lg">
+                        <p class="font-semibold mb-2">💰 Salarios Colombia 2026:</p>
+                        <p class="text-sm text-textoSecundario">• Inicial: $1.800.000 - $3.800.000 COP<br>• Experiencia: $4.000.000 - $12.000.000 COP</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4 mt-6">
+                <button onclick="irA('carreras')" class="boton flex-1 bg-azul text-fondo py-3">Ver carreras completas</button>
+                <button onclick="reiniciarTest()" class="boton flex-1 bg-tarjeta border border-borde py-3">Repetir test</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- PÁGINA: EXPLORAR CARRERAS -->
+<div id="carreras" class="pagina">
+    <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold mb-3">Explorar Carreras por Área (Universitarias y SENA)</h2>
+        <p class="text-textoSecundario max-w-2xl mx-auto">Catálogo completo validado al 2026 con opciones universitarias de alta calidad y programas técnicos/tecnológicos gratuitos del SENA en Boyacá y Colombia.</p>
+    </div>
+
+    <!-- ÁREA 1: EMPRESARIAL, ADMINISTRATIVA Y LEGAL -->
+    <h3 class="text-2xl font-bold mb-6 flex items-center gap-2">
+        <span class="text-amarillo">💼</span> 1. Área Empresarial, Administrativa y Legal
+    </h3>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div class="tarjeta">
+            <span class="etiqueta bg-amarillo/20 text-amarillo mb-3 inline-block">Profesional</span>
+            <h4 class="text-xl font-bold mb-3">Administración de Empresas</h4>
+            <p class="text-sm text-textoSecundario mb-4">Planifica, dirige y controla recursos organizacionales y estrategias de mercado.</p>
+            <div class="space-y-2 text-sm">
+                <div class="dato"><strong>⏱️ Duración:</strong> 5 años</div>
+                <div class="dato"><strong>💰 Salario inicial:</strong> $2.2M - $3.8M COP</div>
+                <div class="dato"><strong>📍 Instituciones:</strong> <a href="https://www.uptc.edu.co" target="_blank" class="text-azul underline">UPTC</a>, <a href="https://www.uniboyaca.edu.co" target="_blank" class="text-azul underline">UniBoyacá</a>, <a href="https://www.unad.edu.co" target="_blank" class="text-azul underline">UNAD</a></div>
+            </div>
+        </div>
+        <div class="tarjeta">
+            <span class="etiqueta bg-amarillo/20 text-amarillo mb-3 inline-block">Profesional</span>
+            <h4 class="text-xl font-bold mb-3">Contaduría Pública</h4>
+            <p class="text-sm text-textoSecundario mb-4">Gestión financiera, auditoría, impuestos y control contable empresarial.</p>
+            <div class="space-y-2 text-sm">
+                <div class="dato"><strong>⏱️ Duración:</strong> 5 años</div>
+                <div class="dato"><strong>💰 Salario inicial:</strong> $2.0M - $3.5M COP</div>
+                <div class="dato"><strong>📍 Instituciones:</strong> <a href="https://www.uptc.edu.co" target="_blank" class="text-azul underline">UPTC</a>, <a href="https://www.ustatunja.edu.co" target="_blank" class="text-azul underline">Santo Tomás</a></div>
+            </div>
+        </div>
+        <div class="tarjeta">
+            <span class="etiqueta bg-verde/20 text-verde mb-3 inline-block">Tecnólogo SENA (Gratuito)</span>
+            <h4 class="text-xl font-bold mb-3">Gestión Contable y Financiera</h4>
+            <p class="text-sm text-textoSecundario mb-4">Apoyo en registros contables, costos, presupuestos y normatividad tributaria.</p>
+            <div class="space-y-2 text-sm">
+                <div class="dato"><strong>⏱️ Duración:</strong> 24 meses</div>
+                <div class="dato"><strong>💰 Salario inicial:</strong> $1.8M - $2.8M COP</div>
+                <div class="dato"><strong>📍 Institución:</strong> <a href="https://oferta.senasofiaplus.edu.co" target="_blank" class="text-verde underline">SENA Boyacá</a></div>
+            </div>
+        </div>
+        <div class="tarjeta">
+            <span class="etiqueta bg-amarillo/20 text-amarillo mb-3 inline-block">Profesional</span>
+            <h4 class="text-xl font-bold mb-3">Derecho</h4>
+            <p class="text-sm text-textoSecundario mb-4">Litigio, asesoría jurídica, defensa legal y aplicación de normas constitucionales.</p>
+            <div class="space-y-2 text-sm">
+                <div class="dato"><strong>⏱️ Duración:</strong> 5 años</div>
+                <div class="dato"><strong>💰 Salario inicial:</strong> $2.5M - $4.2M COP</div>
+                <div class="dato"><strong>📍 Instituciones:</strong> <a href="https://www.uptc.edu.co" target="_blank" class="text-azul underline">UPTC</a>, <a href="https://www.ustatunja.edu.co" target="_blank" class="text-azul underline">Santo Tomás</a></div>
+            </div>
+        </div>
+        <div class="tarjeta">
+            <span class="etiqueta bg-verde/20 text-verde mb-3 inline-block">Tecnólogo SENA (Gratuito)</span>
+            <h4 class="text-xl font-bold mb-3">Gestión del Talento Humano</h4>
+            <p class="text-sm text-textoSecundario mb-4">Selección de personal, bienestar laboral, nómina y desarrollo organizacional.</p>
+            <div class="space-y-2 text-sm">
+                <div class="dato"><strong>⏱️ Duración:</strong> 24 meses</div>
+                <div class="dato"><strong>💰 Salario inicial:</strong> $1.8M - $2.7M COP</div>
+                <div class="dato"><strong>📍 Institución:</strong> <a href="https://oferta.senasofiaplus.edu.co" target="_blank" class="text-verde underline">SENA Tunja</a></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ÁREA 2: SALUD Y BIENESTAR -->
+    <h3 class="text-2xl font-bold mb-6 flex items-center gap-2">
+        <span class="text-rosa">🩺</span> 2. Área de la Salud y Bienestar
+    </h3>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div class="tarjeta">
+            <span class="etiqueta bg-rosa/20 text-rosa mb-3 inline-block">Profesional</span>
+            <h4 class="text-xl font-bold mb-3">Medicina</h4>
+            <p class="text-sm text-textoSecundario mb-4">Diagnóstico, tratamiento clínico, prevención y recuperación de la salud humana.</p>
+            <div class="space-y-2 text-sm">
+                <div class="dato"><strong>⏱️ Duración:</strong> 7 años</div>
+                <div class="dato"><strong>💰 Salario inicial:</strong> $3.5M - $5.2M COP</div>
+                <div class="dato"><strong>📍 Instituciones:</strong> <a href="https://www.uptc.edu.co" target="_blank" class="text-azul underline">UPTC</a>, <a href="https://www.uniboyaca.edu.co" target="_blank" class="text-azul underline">UniBoyacá</a></div>
+            </div>
+        </div>
+        <div class="tarjeta">
+            <span class="etiqueta bg-rosa/20 text-rosa mb-3 inline-block">Profesional</span>
+            <h4 class="text-xl font-bold mb-3">Enfermería</h4>
+            <p class="text-sm text-textoSecundario mb-4">Cuidado clínico especializado, gestión de servicios sanitarios y asistencia a pacientes.</p>
+            <div class="space-y-2 text-sm">
+                <div class="dato"><strong>⏱️ Duración:</strong> 5 años</div>
+                <div class="dato"><strong>💰 Salario inicial:</strong> $2.6M - $4.0M COP</div>
+                <div class="dato"><strong>📍 Instituciones:</strong> <a href="https://www.uptc.edu.co" target="_blank" class="text-azul underline">UPTC</a>, <a href="https://www.uniboyaca.edu.co" target="_blank" class="text-azul underline">UniBoyacá</a></div>
+            </div>
+        </div>
+        <div class="tarjeta">
+            <span class="etiqueta bg-verde/20 text-verde mb-3 inline-block">Técnico SENA (Gratuito)</span>
+            <h4 class="text-xl font-bold mb-3">Enfermería y Apoyo en Salud</h4>
+            <p class="text-sm text-textoSecundario mb-4">Asistencia hospitalaria básica, toma de signos vitales y cuidado primario de pacientes.</p>
+            <div class="space-y-2 text-sm">
+                <div class="dato"><strong>⏱️ Duración:</strong> 12 meses + 6 de práctica</div>
+                <div class="dato"><strong>💰 Salario inicial:</strong> $1.7M - $2.5M COP</div>
+                <div class="dato"><strong>📍 Institución:</strong> <a href="https://oferta.senasofiaplus.edu.co" target="_blank" class="text-verde underline">SENA Boyacá</a></div>
+            </div>
+        </div>
+        <div class="tarjeta">
+            <span class="etiqueta bg-rosa/20 text-rosa mb-3 inline-block">Profesional</span>
+            <h4 class="text-xl font-bold mb-3">Psicología</h4>
+            <p class="text-sm text-textoSecundario mb-4">Salud mental, orientación clínica, intervención psicosocial y organizacional.</p>
+            <div class="space-y-2 text-sm">
+                <div class="dato"><strong>⏱️ Duración:</strong> 5 años</div>
+                <div class="dato"><strong>💰 Salario inicial:</strong> $2.2M - $3.5M COP</div>
+                <div class="dato"><strong>📍 Instituciones:</strong> <a href="https://www.uptc.edu.co" target="_blank" class="text-azul underline">UPTC</a>, <a href="https://www.unad.edu.co" target="_blank" class="text-azul underline">UNAD</a></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ÁREA 3: CIENCIAS, TECNOLOGÍA E INGENIERÍA -->
+    <h3 class="text-2xl font-bold mb-6 flex items-center gap-2">
+        <span class="text-verde">⚙️</span> 3. Ciencias, Tecnología e Ingeniería
+    </h3>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div class="tarjeta">
+            <span class="etiqueta bg-verde/20 text-verde mb-3 inline-block">Profesional</span>
+            <h4 class="text-xl font-bold mb-3">Ingeniería de Sistemas y Computación</h4>
+            <p class="text-sm text-textoSecundario mb-4">Creación de software, ciberseguridad, bases de datos y arquitectura tecnológica.</p>
+            <div class="space-y-2 text-sm">
+                <div class="dato"><strong>⏱️ Duración:</strong> 5 años</div>
+                <div class="dato"><strong>💰 Salario inicial:</strong> $3.0M - $5.0M COP</div>
+                <div class="dato"><strong>📍 Instituciones:</strong> <a href="https://www.uptc.edu.co" target="_blank" class="text-azul underline">UPTC</a>, <a href="https://www.unad.edu.co" target="_blank" class="text-azul underline">UNAD</a></div>
+            </div>
+        </div>
+        <div class="tarjeta">
+            <span class="etiqueta bg-verde/20 text-verde mb-3 inline-block">Tecnólogo SENA (Gratuito)</span>
+            <h4 class="text-xl font-bold mb-3">Tecnología en Análisis y Desarrollo de Software (ADSO)</h4>
+            <p class="text-sm text-textoSecundario mb-4">Programación de aplicaciones web, móviles y sistemas informáticos prácticos.</p>
+            <div class="space-y-2 text-sm">
+                <div class="dato"><strong>⏱️ Duración:</strong> 24 meses</div>
+                <div class="dato"><strong>💰 Salario inicial:</strong> $2.5M - $4.0M COP</div>
+                <div class="dato"><strong>📍 Institución:</strong> <a href="https://oferta.senasofiaplus.edu.co" target="_blank" class="text-verde underline">SENA Tunja / Sogamoso</a></div>
+            </div>
+        </div>
+        <div class="tarjeta">
+            <span class="etiqueta bg-verde/20 text-verde mb-3 inline-block">Profesional</span>
+            <h4 class="text-xl font-bold mb-3">Ingeniería Civil</h4>
+            <p class="text-sm text-textoSecundario mb-4">Diseño y ejecución de obras de infraestructura, vías, puentes y edificaciones.</p>
+            <div class="space-y-2 text-sm">
+                <div class="dato"><strong>⏱️ Duración:</strong> 5 años</div>
+                <div class="dato"><strong>💰 Salario inicial:</strong> $2.8M - $4.5M COP</div>
+                <div class="dato"><strong>📍 Instituciones:</strong> <a href="https://www.uptc.edu.co" target="_blank" class="text-azul underline">UPTC</a>, <a href="https://www.uniboyaca.edu.co" target="_blank" class="text-azul underline">UniBoyacá</a></div>
+            </div>
+        </div>
+        <div class="tarjeta">
+            <span class="etiqueta bg-verde/20 text-verde mb-3 inline-block">Profesional</span>
+            <h4 class="text-xl font-bold mb-3">Ingeniería Industrial</h4>
+            <p class="text-sm text-textoSecundario mb-4">Optimización de procesos productivos, cadenas de suministro y gestión de calidad.</p>
+            <div class="space-y-2 text-sm">
+                <div class="dato"><strong>⏱️ Duración:</strong> 5 años</div>
+                <div class="dato"><strong>💰 Salario inicial:</strong> $2.6M - $4.2M COP</div>
+                <div class="dato"><strong>📍 Instituciones:</strong> <a href="https://www.uptc.edu.co" target="_blank" class="text-azul underline">UPTC</a>, <a href="https://www.ustatunja.edu.co" target="_blank" class="text-azul underline">Santo Tomás</a></div>
+            </div>
+        </div>
+        <div class="tarjeta">
+            <span class="etiqueta bg-verde/20 text-verde mb-3 inline-block">Tecnólogo SENA (Gratuito)</span>
+            <h4 class="text-xl font-bold mb-3">Mantenimiento de Equipos Biomédicos e Industriales</h4>
+            <p class="text-sm text-textoSecundario mb-4">Calibración y reparación de tecnología avanzada para hospitales e industrias.</p>
+            <div class="space-y-2 text-sm">
+                <div class="dato"><strong>⏱️ Duración:</strong> 24 meses</div>
+                <div class="dato"><strong>💰 Salario inicial:</strong> $2.2M - $3.5M COP</div>
+                <div class="dato"><strong>📍 Institución:</strong> <a href="https://oferta.senasofiaplus.edu.co" target="_blank" class="text-verde underline">SENA Boyacá</a></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ÁREA 4: ARTE, DISEÑO Y COMUNICACIÓN -->
+    <h3 class="text-2xl font-bold mb-6 flex items-center gap-2">
+        <span class="text-morado">🎨</span> 4. Arte, Diseño y Comunicación
+    </h3>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div class="tarjeta">
+            <span class="etiqueta bg-morado/20 text-morado mb-3 inline-block">Profesional</span>
+            <h4 class="text-xl font-bold mb-3">Diseño Gráfico / Multimedia</h4>
+            <p class="text-sm text-textoSecundario mb-4">Creación de identidad visual, experiencias digitales, UX/UI y branding.</p>
+            <div class="space-y-2 text-sm">
+                <div class="dato"><strong>⏱️ Duración:</strong> 4 a 5 años</div>
+                <div class="dato"><strong>💰 Salario inicial:</strong> $2.0M - $3.4M COP</div>
+                <div class="dato"><strong>📍 Instituciones:</strong> <a href="https://www.uniboyaca.edu.co" target="_blank" class="text-azul underline">UniBoyacá</a>, <a href="https://www.uptc.edu.co" target="_blank" class="text-azul underline">UPTC</a></div>
+            </div>
+        </div>
+        <div class="tarjeta">
+            <span class="etiqueta bg-verde/20 text-verde mb-3 inline-block">Tecnólogo SENA (Gratuito)</span>
+            <h4 class="text-xl font-bold mb-3">Producción de Multimedia</h4>
+            <p class="text-sm text-textoSecundario mb-4">Edición de video, animación 2D/3D, fotografía y contenidos digitales interactivos.</p>
+            <div class="space-y-2 text-sm">
+                <div class="dato"><strong>⏱️ Duración:</strong> 24 meses</div>
+                <div class="dato"><strong>💰 Salario inicial:</strong> $2.0M - $3.2M COP</div>
+                <div class="dato"><strong>📍 Institución:</strong> <a href="https://oferta.senasofiaplus.edu.co" target="_blank" class="text-verde underline">SENA Boyacá</a></div>
+            </div>
+        </div>
+        <div class="tarjeta">
+            <span class="etiqueta bg-morado/20 text-morado mb-3 inline-block">Profesional</span>
+            <h4 class="text-xl font-bold mb-3">Comunicación Social y Periodismo</h4>
+            <p class="text-sm text-textoSecundario mb-4">Creación de contenidos informativos, relaciones públicas y comunicación digital.</p>
+            <div class="space-y-2 text-sm">
+                <div class="dato"><strong>⏱️ Duración:</strong> 4 a 5 años</div>
+                <div class="dato"><strong>💰 Salario inicial:</strong> $1.9M - $3.2M COP</div>
+                <div class="dato"><strong>📍 Instituciones:</strong> <a href="https://www.uptc.edu.co" target="_blank" class="text-azul underline">UPTC</a></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ÁREA 5: AGROPECUARIA Y AMBIENTAL -->
+    <h3 class="text-2xl font-bold mb-6 flex items-center gap-2">
+        <span class="text-naranja">🌾</span> 5. Área Agropecuaria, Veterinaria y Ambiental
+    </h3>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div class="tarjeta">
+            <span class="etiqueta bg-naranja/20 text-naranja mb-3 inline-block">Profesional</span>
+            <h4 class="text-xl font-bold mb-3">Medicina Veterinaria y Zootecnia</h4>
+            <p class="text-sm text-textoSecundario mb-4">Salud animal, producción pecuaria, bioseguridad y gestión en el sector agropecuario.</p>
+            <div class="space-y-2 text-sm">
+                <div class="dato"><strong>⏱️ Duración:</strong> 5 años</div>
+                <div class="dato"><strong>💰 Salario inicial:</strong> $2.4M - $3.8M COP</div>
+                <div class="dato"><strong>📍 Instituciones:</strong> <a href="https://www.uptc.edu.co" target="_blank" class="text-azul underline">UPTC (Tunja / Chiquinquirá)</a></div>
+            </div>
+        </div>
+        <div class="tarjeta">
+            <span class="etiqueta bg-naranja/20 text-naranja mb-3 inline-block">Profesional</span>
+            <h4 class="text-xl font-bold mb-3">Ingeniería Agronómica</h4>
+            <p class="text-sm text-textoSecundario mb-4">Tecnología de cultivos, producción agrícola sostenible y seguridad alimentaria regional.</p>
+            <div class="space-y-2 text-sm">
+                <div class="dato"><strong>⏱️ Duración:</strong> 5 años</div>
+                <div class="dato"><strong>💰 Salario inicial:</strong> $2.3M - $3.8M COP</div>
+                <div class="dato"><strong>📍 Instituciones:</strong> <a href="https://www.uptc.edu.co" target="_blank" class="text-azul underline">UPTC</a></div>
+            </div>
+        </div>
+        <div class="tarjeta">
+            <span class="etiqueta bg-verde/20 text-verde mb-3 inline-block">Tecnólogo SENA (Gratuito)</span>
+            <h4 class="text-xl font-bold mb-3">Producción Agropecuaria Ecológica</h4>
+            <p class="text-sm text-textoSecundario mb-4">Manejo limpio de cultivos, sistemas de riego y ganadería sostenible en Boyacá.</p>
+            <div class="space-y-2 text-sm">
+                <div class="dato"><strong>⏱️ Duración:</strong> 24 meses</div>
+                <div class="dato"><strong>💰 Salario inicial:</strong> $1.8M - $2.8M COP</div>
+                <div class="dato"><strong>📍 Institución:</strong> <a href="https://oferta.senasofiaplus.edu.co" target="_blank" class="text-verde underline">Centro Agropecuario SENA Tunja</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- PÁGINA: UNIVERSIDADES Y RUTAS SENA -->
+<div id="universidades" class="pagina">
+    <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold mb-3">Universidades e Instituciones de Educación Superior</h2>
+        <p class="text-textoSecundario max-w-2xl mx-auto">Conoce las opciones universitarias y la ruta rápida y gratuita que te ofrece el SENA para construir un futuro laboral exitoso.</p>
+    </div>
+
+    <!-- SECCIÓN SENA DESTACADA -->
+    <div class="tarjeta border-2 border-verde mb-12 bg-gradient-to-r from-tarjeta to-slate-800">
+        <div class="flex items-center justify-between flex-wrap gap-4 mb-4">
+            <div class="flex items-center gap-3">
+                <span class="text-3xl">🚀</span>
+                <div>
+                    <h3 class="text-2xl font-bold text-verde">El SENA: Tu Puente Rápido al Éxito Profesional</h3>
+                    <p class="text-sm text-textoSecundario">Formación de alta demanda, 100% gratuita y garantizada por el Estado colombiano.</p>
+                </div>
+            </div>
+            <a href="https://www.sena.edu.co" target="_blank" class="boton bg-verde text-fondo px-4 py-2 font-bold hover:bg-emerald-400">Ir al Portal SENA 🔗</a>
+        </div>
+        
+        <!-- FOTO DEL SENA -->
+        <div class="mb-6 overflow-hidden rounded-xl border border-borde h-52">
+            <img src="foto-sena.jpg" alt="SENA Boyacá" class="w-full h-full object-cover">
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 my-6">
+            <div class="bg-fondo/60 p-4 rounded-xl border border-borde">
+                <h4 class="font-bold text-verde mb-2">⚡ Rápida Inserción Laboral</h4>
+                <p class="text-sm text-textoSecundario">En solo 1 a 2 años te conviertes en un profesional técnico o tecnólogo listo para trabajar en el mercado laboral real.</p>
+            </div>
+            <div class="bg-fondo/60 p-4 rounded-xl border border-borde">
+                <h4 class="font-bold text-verde mb-2">💡 Cadena de Formación</h4>
+                <p class="text-sm text-textoSecundario">Puedes homologar tus estudios de Tecnólogo SENA en universidades como UPTC o UNAD para obtener tu título profesional en menos tiempo.</p>
+            </div>
+            <div class="bg-fondo/60 p-4 rounded-xl border border-borde">
+                <h4 class="font-bold text-verde mb-2">💵 Subsidio y Prácticas Pagas</h4>
+                <p class="text-sm text-textoSecundario">Mediante el contrato de aprendizaje recibes ingresos económicos mientras estudias y realizas tus prácticas en empresas.</p>
+            </div>
+        </div>
+
+        <div class="bg-fondo/40 p-4 rounded-xl border border-borde">
+            <h4 class="font-bold mb-2 text-amarillo">📌 Programas con Mayor Salida Laboral en el SENA Boyacá:</h4>
+            <ul class="grid md:grid-cols-2 gap-2 text-sm text-textoSecundario">
+                <li>• 💻 Tecnólogo en Análisis y Desarrollo de Software (ADSO)</li>
+                <li>• 📊 Tecnólogo en Gestión Empresarial y Contabilidad</li>
+                <li>• 🛠️ Tecnólogo en Mantenimiento de Equipos e Instalaciones</li>
+                <li>• 🌾 Tecnólogo en Producción Agropecuaria Ecológica</li>
+                <li>• 🩺 Técnico en Servicios de Salud y Apoyo Sanitario</li>
+                <li>• 🎨 Tecnólogo en Producción Multimedia y Diseño Web</li>
+            </ul>
+        </div>
+    </div>
+
+    <h3 class="text-2xl font-bold mb-6 flex items-center gap-2">
+        <span class="text-azul">📍</span> Universidades en Tunja y Boyacá
+    </h3>
+    <div class="grid md:grid-cols-2 gap-6 mb-12">
+        <!-- UPTC -->
+        <div class="tarjeta border-l-4 border-azul">
+            <div class="mb-4 overflow-hidden rounded-xl border border-borde h-48">
+                <img src="uptc.jpg" alt="Universidad UPTC" class="w-full h-full object-cover">
+            </div>
+            <h4 class="text-xl font-bold mb-2">UPTC - Universidad Pedagógica y Tecnológica de Colombia</h4>
+            <span class="etiqueta bg-azul/20 text-azul mb-3 inline-block">Pública - Principal del departamento</span>
+            <p class="text-sm text-textoSecundario mb-4">Fundada en 1953, con sedes principales en Tunja, Sogamoso, Duitama y Chiquinquirá.</p>
+            <a href="https://www.uptc.edu.co" target="_blank" class="boton bg-azul text-fondo text-xs px-3 py-2 font-bold hover:bg-sky-400">Visitar Sitio Web UPTC 🔗</a>
+        </div>
+
+        <!-- Universidad de Boyacá -->
+        <div class="tarjeta border-l-4 border-morado">
+            <div class="mb-4 overflow-hidden rounded-xl border border-borde h-48">
+                <img src="uniboyaca.jpg" alt="Universidad de Boyacá" class="w-full h-full object-cover">
+            </div>
+            <h4 class="text-xl font-bold mb-2">Universidad de Boyacá</h4>
+            <span class="etiqueta bg-morado/20 text-morado mb-3 inline-block">Privada - Alta calidad</span>
+            <p class="text-sm text-textoSecundario mb-4">Institución acreditada en alta calidad con sedes en Tunja y Sogamoso.</p>
+            <a href="https://www.uniboyaca.edu.co" target="_blank" class="boton bg-morado text-fondo text-xs px-3 py-2 font-bold hover:bg-purple-400">Visitar Sitio Web UniBoyacá 🔗</a>
+        </div>
+
+        <!-- UNAD -->
+        <div class="tarjeta border-l-4 border-amarillo">
+            <div class="mb-4 overflow-hidden rounded-xl border border-borde h-48">
+                <img src="unad.jpg" alt="Universidad UNAD" class="w-full h-full object-cover">
+            </div>
+            <h4 class="text-xl font-bold mb-2">UNAD - Universidad Nacional Abierta y a Distancia</h4>
+            <span class="etiqueta bg-amarillo/20 text-amarillo mb-3 inline-block">Pública - Modalidad Virtual y Presencial</span>
+            <p class="text-sm text-textoSecundario mb-4">Líder en educación virtual con centro CEAD en Tunja y cobertura en toda Colombia.</p>
+            <a href="https://www.unad.edu.co" target="_blank" class="boton bg-amarillo text-fondo text-xs px-3 py-2 font-bold hover:bg-amber-400">Visitar Sitio Web UNAD 🔗</a>
+        </div>
+
+        <!-- Santo Tomás -->
+        <div class="tarjeta border-l-4 border-rosa">
+            <div class="mb-4 overflow-hidden rounded-xl border border-borde h-48">
+                <img src="ustatunja.jpg" alt="Universidad Santo Tomás Tunja" class="w-full h-full object-cover">
+            </div>
+            <h4 class="text-xl font-bold mb-2">Universidad Santo Tomás - Seccional Tunja</h4>
+            <span class="etiqueta bg-rosa/20 text-rosa mb-3 inline-block">Privada - Acreditación Institucional</span>
+            <p class="text-sm text-textoSecundario mb-4">Primer claustro universitario de Colombia con campus moderno en Tunja.</p>
+            <a href="https://www.ustatunja.edu.co" target="_blank" class="boton bg-rosa text-fondo text-xs px-3 py-2 font-bold hover:bg-pink-400">Visitar Sitio Web USTA Tunja 🔗</a>
+        </div>
+    </div>
+</div>
+
+<!-- PÁGINA: SENA -->
+<div id="sena" class="pagina">
+    <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold mb-3">Servicio Nacional de Aprendizaje - SENA</h2>
+        <p class="text-textoSecundario max-w-2xl mx-auto mb-4">Formación profesional integral <strong>100% gratuita</strong>, con alta demanda laboral y oportunidades inmediatas.</p>
+        <div class="flex justify-center gap-3">
+            <a href="https://www.sena.edu.co" target="_blank" class="boton bg-verde text-fondo px-5 py-2 font-bold hover:bg-emerald-400">Portal Oficial SENA 🔗</a>
+            <a href="https://oferta.senasofiaplus.edu.co" target="_blank" class="boton bg-azul text-fondo px-5 py-2 font-bold hover:bg-sky-400">Inscripciones SofiaPlus 🔗</a>
+        </div>
+    </div>
+    
+    <div class="grid md:grid-cols-3 gap-6 mb-10">
+        <div class="tarjeta text-center">
+            <h4 class="text-lg font-bold text-verde mb-2">✅ Sin costo de matrícula</h4>
+            <p class="text-sm text-textoSecundario">El Estado cubre todos los gastos de formación e insumos</p>
+        </div>
+        <div class="tarjeta text-center">
+            <h4 class="text-lg font-bold text-verde mb-2">💼 Contrato de aprendizaje</h4>
+            <p class="text-sm text-textoSecundario">Recibes apoyo económico mensual mientras realizas prácticas en empresas reales</p>
+        </div>
+        <div class="tarjeta text-center">
+            <h4 class="text-lg font-bold text-verde mb-2">📜 Títulos de alta empleabilidad</h4>
+            <p class="text-sm text-textoSecundario">Técnico y Tecnólogo avalados oficialmente por el Ministerio de Educación</p>
+        </div>
+    </div>
+
+    <div class="tarjeta mb-8 border-l-4 border-verde">
+        <h4 class="text-xl font-bold mb-3">🌟 Razones para Elegir el SENA</h4>
+        <div class="space-y-3 text-sm text-textoSecundario">
+            <p>• <strong>Experiencia Práctica Real:</strong> Más del 70% de tu proceso de aprendizaje es práctico en talleres y laboratorios de vanguardia.</p>
+            <p>• <strong>Homologación Universitaria:</strong> Al terminar tu Tecnólogo en el SENA, puedes ingresar a carreras universitarias públicas y privadas en semestres avanzados.</p>
+            <p>• <strong>Fondo Emprender:</strong> Acceso a capital semilla no reembolsable para crear tu propia empresa o emprendimiento en Boyacá.</p>
+        </div>
+    </div>
+
+    <h3 class="text-xl font-bold mb-4">📍 Centros de formación en Boyacá</h3>
+    <div class="grid md:grid-cols-2 gap-4 mb-8">
+        <div class="tarjeta">
+            <h5 class="font-bold mb-2">Centro de Gestión Administrativa y de Mercados - Tunja</h5>
+            <p class="text-sm text-textoSecundario mb-2">Programas: Contabilidad, Ventas, Recursos Humanos, Desarrollo Empresarial</p>
+        </div>
+        <div class="tarjeta">
+            <h5 class="font-bold mb-2">Centro de Industria y Construcción - Tunja</h5>
+            <p class="text-sm text-textoSecundario mb-2">Programas: Sistemas, Electricidad, Mecánica, Obras Civiles</p>
+        </div>
+        <div class="tarjeta">
+            <h5 class="font-bold mb-2">Centro Agropecuario - Tunja / Sogamoso</h5>
+            <p class="text-sm text-textoSecundario mb-2">Programas: Agricultura, Ganadería, Transformación de alimentos</p>
+        </div>
+        <div class="tarjeta">
+            <h5 class="font-bold mb-2">Centro Minero y Ambiental - Sogamoso</h5>
+            <p class="text-sm text-textoSecundario mb-2">Programas: Minería, Gestión ambiental, Topografía</p>
+        </div>
+    </div>
+</div>
+
+<!-- PÁGINA: GUÍA POR GRADO (MOTIVACIONAL) -->
+<div id="grados" class="pagina">
+    <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold mb-3">Tu Camino Hacia el Éxito: Guía Motivacional por Grado</h2>
+        <p class="text-textoSecundario max-w-2xl mx-auto">Cada etapa escolar es un escalón hacia la construcción de tus sueños. ¡Descubre cómo aprovechar al máximo tu momento actual!</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+        <div class="tarjeta border-t-4 border-amarillo relative overflow-hidden">
+            <div class="text-4xl mb-2">🎒</div>
+            <h4 class="text-xl font-bold mb-3 text-amarillo">Grado 9°: Descubre Tu Potencial Único</h4>
+            <p class="text-sm mb-4 font-medium italic">"El futuro pertenece a quienes creen en la belleza de sus sueños."</p>
+            <ul class="text-sm text-textoSecundario space-y-3">
+                <li>✨ <strong>Explora sin límites:</strong> Es el momento perfecto para descubrir tus pasiones, probar actividades creativas y apasionarte por el conocimiento.</li>
+                <li>🌱 <strong>Siembra hábitos fuertes:</strong> Un buen promedio desde 9° te abrirá las puertas a becas y convenios de excelencia.</li>
+                <li>💡 <strong>Conoce tus fortalezas:</strong> No te compares con nadie. Tus habilidades únicas son la llave para destacar en el mañana.</li>
+            </ul>
+        </div>
+
+        <div class="tarjeta border-t-4 border-azul relative overflow-hidden">
+            <div class="text-4xl mb-2">📚</div>
+            <h4 class="text-xl font-bold mb-3 text-azul">Grado 10°: Construye Tu Visión Estratégica</h4>
+            <p class="text-sm mb-4 font-medium italic">"No hay metas inalcanzables, solo personas que se rinden antes de tiempo."</p>
+            <ul class="text-sm text-textoSecundario space-y-3">
+                <li>🎯 <strong>Investiga tus opciones:</strong> Conoce a fondo las carreras, el SENA y las universidades. Infórmate sobre lo que te apasiona y cómo pagan en el mundo laboral.</li>
+                <li>🚀 <strong>Aprovecha la articulación con el SENA:</strong> Si tu colegio la ofrece, obtén tu primer título técnico antes de graduarte.</li>
+                <li>🔥 <strong>Prepárate con disciplina:</strong> Empieza a reforzar tus áreas clave para las pruebas Saber 11. Cada esfuerzo extra suma.</li>
+            </ul>
+        </div>
+
+        <div class="tarjeta border-t-4 border-verde relative overflow-hidden">
+            <div class="text-4xl mb-2">🎓</div>
+            <h4 class="text-xl font-bold mb-3 text-verde">Grado 11°: Conquista Tu Gran Futuro</h4>
+            <p class="text-sm mb-4 font-medium italic">"Tu único límite es la decisión de empezar hoy a construir tu destino."</p>
+            <ul class="text-sm text-textoSecundario space-y-3">
+                <li>🏆 <strong>Da el 100% en el ICFES:</strong> Afronta la prueba Saber 11 con mentalidad ganadora y confianza en todo lo que has aprendido.</li>
+                <li>💸 <strong>Abre puertas a becas e ICETEX:</strong> Mantente atento a las convocatorias públicas y programas gubernamentales de financiación.</li>
+                <li>💪 <strong>Toma acción sin miedo:</strong> Elige la ruta que resuene con tu vocación, ya sea el SENA, la universidad o un emprendimiento. ¡Confía en ti!</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- PÁGINA: OPCIONES SIN UNIVERSIDAD Y EMPRENDIMIENTO -->
+<div id="opciones" class="pagina">
+    <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold mb-3">Opciones sin Universidad & Guía de Emprendimiento</h2>
+        <p class="text-textoSecundario max-w-2xl mx-auto">El título universitario no es el único camino al éxito. Descubre alternativas técnicas muy demandadas y aprende cómo construir tu propio negocio rentable en Colombia.</p>
+    </div>
+
+    <!-- SECCIÓN DE EMPRENDIMIENTO -->
+    <div class="tarjeta border-2 border-naranja mb-10 bg-gradient-to-r from-tarjeta to-amber-950/40">
+        <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🚀</span>
+            <div>
+                <h3 class="text-2xl font-bold text-naranja">¿Cómo Emprender con Éxito desde Joven?</h3>
+                <p class="text-sm text-textoSecundario">Emprender es resolver un problema real para otras personas y cobrar por ello. Sigue esta hoja de ruta comprobada:</p>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-4 my-6">
+            <div class="bg-fondo/60 p-4 rounded-xl border border-borde">
+                <span class="text-naranja font-bold text-lg">Paso 1</span>
+                <h4 class="font-bold text-white mb-1 mt-1">Identifica una Necesidad</h4>
+                <p class="text-xs text-textoSecundario">Observa tu entorno en Tunja o Boyacá. ¿Qué producto o servicio falta o se presta de forma deficiente?</p>
+            </div>
+            <div class="bg-fondo/60 p-4 rounded-xl border border-borde">
+                <span class="text-naranja font-bold text-lg">Paso 2</span>
+                <h4 class="font-bold text-white mb-1 mt-1">Crea un PMV (Producto Mínimo)</h4>
+                <p class="text-xs text-textoSecundario">No inviertas grandes sumas de dinero al inicio. Lanza una versión básica de tu idea y pruébala con tus primeros clientes.</p>
+            </div>
+            <div class="bg-fondo/60 p-4 rounded-xl border border-borde">
+                <span class="text-naranja font-bold text-lg">Paso 3</span>
+                <h4 class="font-bold text-white mb-1 mt-1">Usa Redes Sociales</h4>
+                <p class="text-xs text-textoSecundario">Instagram, TikTok y WhatsApp Business son tus mejores canales de venta gratuitos. Muestra el proceso y genera confianza.</p>
+            </div>
+            <div class="bg-fondo/60 p-4 rounded-xl border border-borde">
+                <span class="text-naranja font-bold text-lg">Paso 4</span>
+                <h4 class="font-bold text-white mb-1 mt-1">Reinvierte tus Ganancias</h4>
+                <p class="text-xs text-textoSecundario">En los primeros 6 a 12 meses, reinvierte lo generado en mejorar tu inventario, herramientas o capacitación.</p>
+            </div>
+        </div>
+
+        <!-- RECURSOS DE FINANCIACIÓN Y APOYO AL EMPRENDEDOR -->
+        <div class="bg-fondo/50 p-5 rounded-xl border border-borde">
+            <h4 class="font-bold mb-3 text-amarillo flex items-center gap-2">
+                💰 Apoyos Oficiales y Capital Semilla en Colombia:
+            </h4>
+            <div class="grid md:grid-cols-3 gap-4 text-sm text-textoSecundario">
+                <div>
+                    <p class="font-bold text-white mb-1">• Fondo Emprender del SENA</p>
+                    <p class="text-xs">Otorga capital semilla no reembolsable a tecnólogos o estudiantes para financiar sus proyectos productivos.</p>
+                    <a href="https://www.fondoemprender.com" target="_blank" class="text-verde underline text-xs font-semibold hover:text-emerald-300 mt-1 inline-block">www.fondoemprender.com 🔗</a>
+                </div>
+                <div>
+                    <p class="font-bold text-white mb-1">• iNNpulsa Colombia</p>
+                    <p class="text-xs">Agencia del Gobierno Nacional que apoya el emprendimiento, la innovación y el desarrollo empresarial.</p>
+                    <a href="https://innpulsacolombia.com" target="_blank" class="text-azul underline text-xs font-semibold hover:text-sky-300 mt-1 inline-block">innpulsacolombia.com 🔗</a>
+                </div>
+                <div>
+                    <p class="font-bold text-white mb-1">• Cámara de Comercio de Tunja</p>
+                    <p class="text-xs">Capacitaciones gratuitas, asesoría en formalización empresarial y ferias comerciales locales.</p>
+                    <a href="https://cctunja.org.co" target="_blank" class="text-amarillo underline text-xs font-semibold hover:text-amber-300 mt-1 inline-block">cctunja.org.co 🔗</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- IDEAS DE EMPRENDIMIENTO Y OFICIOS RENTABLES -->
+    <h3 class="text-2xl font-bold mb-6 flex items-center gap-2">
+        <span class="text-naranja">🛠️</span> Opciones Prácticas y de Alta Demanda
+    </h3>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="tarjeta">
+            <h4 class="font-bold mb-2 text-naranja">🛠️ Oficios Técnicos Especializados</h4>
+            <p class="text-xs text-textoSecundario mb-3">Tienen alta demanda continua y permiten trabajar de forma independiente o montar un taller propio.</p>
+            <ul class="text-sm text-textoSecundario space-y-1">
+                <li>• Técnico en electricidad residencial y solar</li>
+                <li>• Mecánica automotriz y de motocicletas</li>
+                <li>• Instalación de redes, fibra óptica y cámaras de seguridad</li>
+                <li>• Mantenimiento de aire acondicionado y refrigeración</li>
+            </ul>
+        </div>
+        <div class="tarjeta">
+            <h4 class="font-bold mb-2 text-naranja">💻 Habilidades Digitales y Freelance</h4>
+            <p class="text-xs text-textoSecundario mb-3">Permiten trabajar desde casa para clientes de Colombia y el exterior cobrando en dólares o pesos.</p>
+            <ul class="text-sm text-textoSecundario space-y-1">
+                <li>• Marketing digital y gestión de redes (Community Manager)</li>
+                <li>• Edición de video profesional y contenido para redes</li>
+                <li>• Diseño web en Shopify, WordPress o Webflow</li>
+                <li>• Soporte técnico remoto y gestión de datos</li>
+            </ul>
+        </div>
+        <div class="tarjeta">
+            <h4 class="font-bold mb-2 text-naranja">📦 Comercio y Servicios Locales</h4>
+            <p class="text-xs text-textoSecundario mb-3">Emprendimientos tradicionales con innovación tecnológica y buen servicio al cliente.</p>
+            <ul class="text-sm text-textoSecundario space-y-1">
+                <li>• Tienda en línea (E-commerce) con envíos a nivel nacional</li>
+                <li>• Gastronomía rápida, repostería temática o cafetería de especialidad</li>
+                <li>• Servicios agropecuarios y transformación de productos en Boyacá</li>
+                <li>• Agencia de logística, mensajería o turismo local</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- PÁGINA: CONTACTO Y RECURSOS -->
+<div id="contacto" class="pagina">
+    <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold mb-3">Recursos oficiales y apoyo</h2>
+        <p class="text-textoSecundario">Entidades confiables para consultar información y ayuda económica.</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-6">
+        <div class="tarjeta">
+            <h4 class="font-bold mb-2">🏛️ Ministerio de Educación Nacional</h4>
+            <p class="text-sm text-textoSecundario mb-3">Regula y vigila la calidad de la educación en Colombia.</p>
+            <a href="https://www.mineducacion.gov.co" target="_blank" class="text-azul underline font-semibold hover:text-sky-300">www.mineducacion.gov.co 🔗</a>
+        </div>
+        <div class="tarjeta">
+            <h4 class="font-bold mb-2">💸 ICETEX</h4>
+            <p class="text-sm text-textoSecundario mb-3">Créditos educativos, subsidios y becas de estudio.</p>
+            <a href="https://web.icetex.gov.co" target="_blank" class="text-azul underline font-semibold hover:text-sky-300">web.icetex.gov.co 🔗</a>
+        </div>
+    </div>
+</div>
+
+</main>
+
+<!-- PIE DE PÁGINA -->
+<footer class="bg-tarjeta border-t border-borde py-6 mt-12">
+    <div class="contenedor text-center">
+        <p class="text-sm text-textoSecundario">© 2026 LifeScope | Guía Profesional para Estudiantes de Boyacá y Colombia</p>
+        <p class="text-xs text-textoSecundario mt-2">Información validada con fuentes oficiales: Ministerio de Educación, SENA, UPTC y Ministerio de Trabajo</p>
+    </div>
+</footer>
+
+<script>
+// FUNCIÓN PARA AGREGAR TEXTO RÁPIDO AL ÁREA DE TEXTO
+function agregarTexto(frase) {
+    const area = document.getElementById('texto-talento');
+    area.value = frase;
+    area.focus();
+}
+
+// LÓGICA DE ANÁLISIS DE TALENTO MEJORADA
+function analizarTalentoLibre() {
+    const campoTexto = document.getElementById('texto-talento');
+    const texto = campoTexto ? campoTexto.value.toLowerCase().trim() : '';
+
+    if (!texto || texto.length < 3) {
+        alert("⚠️ Escribe en la caja de texto lo que te gusta hacer (ej: postres, cocina, personas, computadores, etc.)");
+        return;
+    }
+
+    // Comprobación flexible de palabras clave
+    const tieneGastronomia = texto.includes('cocin') || texto.includes('postre') || texto.includes('receta') || texto.includes('dulce') || texto.includes('comida') || texto.includes('reposter') || texto.includes('pastel') || texto.includes('pan');
+    const tieneTecnologia = texto.includes('tecno') || texto.includes('computa') || texto.includes('programa') || texto.includes('software') || texto.includes('celular') || texto.includes('codigo');
+    const tieneArte = texto.includes('foto') || texto.includes('video') || texto.includes('diseñ') || texto.includes('dibuj') || texto.includes('arte');
+
+    let perfilKey = 'comercial';
+    if (tieneGastronomia) {
+        perfilKey = 'reposteria';
+    } else if (tieneTecnologia) {
+        perfilKey = 'tecnologia';
+    } else if (tieneArte) {
+        perfilKey = 'arte';
+    }
+
+    const datosPerfiles = {
+        reposteria: {
+            titulo: "🍰 Emprende en Repostería, Postres & Recetas Únicas",
+            desc: "¡Tienes una combinación perfecta! Tu facilidad para interactuar con las personas sumada a tu talento para preparar postres y recetas deliciosas te da una ventaja enorme en el mercado gastronómico.",
+            ideas: [
+                "• 🧁 <strong>Postres por Encargo y Cajas Regalo:</strong> Prepara minitortas, brownies, galletas decoradas o postres en vaso para cumpleaños o fechas especiales vendidos por Instagram y WhatsApp.",
+                "• 🥐 <strong>Catering de Repostería para Eventos:</strong> Ofrece mesas de dulces y bocados para reuniones familiares, eventos escolares o empresas locales.",
+                "• ☕ <strong>Talleres Cortos o Venta de Recetarios:</strong> Crea guías o graba videos sencillos enseñando tus postres estrellas."
+            ],
+            presupuesto: "<p class='mb-1'>• <strong>Inversión inicial estimada:</strong> $150.000 a $450.000 COP.</p><p class='text-xs opacity-80'>• Insumos e ingredientes de primera calidad para las primeras tandas ($100.000 - $200.000 COP).<br>• Empaques bonitos, cintas y cinta adhesiva personalizada ($50.000 - $100.000 COP).<br>• Publicidad digital inicial en redes ($30.000 COP).</p>",
+            productividad: "<p class='mb-1'>• <strong>Horneado en Bloques (Batching):</strong> Prepara tus bases de postres o bizcochos 1 o 2 días fijos a la semana para aprovechar el consumo de gas/energía.</p><p class='text-xs opacity-80'>• <strong>Recetas Estandarizadas:</strong> Ten una libreta con los gramos exactos de cada ingrediente. Así aseguras que el sabor sea perfecto siempre y no pierdas dinero.</p>",
+            motivacional: "«El ingrediente secreto no es solo la receta, es el cariño y carisma con el que atiendes a cada persona. Tu amor por la cocina más tu don de gente te convertirán en un emprendedor exitoso y recordado.»",
+            consejo: "Prepara una prueba de tus 2 mejores recetas de postres, tómales buenas fotos con luz de día, muéstralas en tu estado de WhatsApp e Instagram y toma tus primeros pedidos por encargo."
+        },
+        tecnologia: {
+            titulo: "💻 Emprende en Servicios Digitales & Soporte Técnico",
+            desc: "Tienes una mente analítica y lógica excelente para resolver problemas técnicos y tecnológicos.",
+            ideas: [
+                "• 🌐 <strong>Creación de Páginas Web y Tiendas Online:</strong> Ayuda a negocios locales a digitalizarse.",
+                "• 🛠️ <strong>Mantenimiento de Equipos y Celulares:</strong> Servicio técnico a domicilio o remoto.",
+                "• 📱 <strong>Configuración de Sistemas y Redes:</strong> Asesoría en instalación de cámaras o redes Wi-Fi."
+            ],
+            presupuesto: "<p>• <strong>Inversión inicial estimada:</strong> $50.000 a $200.000 COP (Solo herramientas básicas, ya que usas tu computador actual).</p>",
+            productividad: "<p>• Trabaja en bloques de concentración de 45 minutos usando la técnica Pomodoro y gestiona tus clientes con Trello.</p>",
+            motivacional: "«La tecnología mueve al mundo. Tu curiosidad lógica y destreza técnica son la llave de oro para abrir cualquier oportunidad del presente y del futuro.»",
+            consejo: "Ofrece tu primer servicio web o mantenimiento a un conocido para armar tu portafolio de testimonios."
+        },
+        arte: {
+            titulo: "🎨 Emprende en Edición Audiovisual & Diseño Gráfico",
+            desc: "Posees gran sensibilidad visual, creatividad e imaginación para conectar a través del diseño y la imagen.",
+            ideas: [
+                "• 🎥 <strong>Edición de Videos Cortos (Reels/TikToks):</strong> Servicio de contenido dinámico para comercios locales.",
+                "• 🎨 <strong>Diseño de Marcas y Logotipos:</strong> Creación de identidades visuales y avisos publicitarios.",
+                "• 🖼️ <strong>Detalles y Papelería Personalizada:</strong> Cuadros, agendas y recuerdos hechos a medida."
+            ],
+            presupuesto: "<p>• <strong>Inversión inicial estimada:</strong> $100.000 a $300.000 COP en suscripciones de edición o papelería básica.</p>",
+            productividad: "<p>• Agrupa la fase creativa en un horario y la fase técnica de edición en otro para no saturar tu mente.</p>",
+            motivacional: "«La creatividad es ver lo que todos ven pero pensar lo que nadie más ha pensado. Confía en la belleza de tus ideas visuales.»",
+            consejo: "Abre una cuenta en redes mostrando tus trabajos de edición o diseño tipo 'antes y después'."
+        },
+        comercial: {
+            titulo: "📢 Emprende en Ventas, Marketing & Servicios Directos",
+            desc: "Tu cualidad principal es el liderazgo, la empatía y tu capacidad persuasiva para negociar y comunicarte.",
+            ideas: [
+                "• 📦 <strong>Tienda Virtual en Redes Sociales:</strong> Venta de productos novedosos mediante envíos.",
+                "• 🎉 <strong>Organización de Eventos Juveniles:</strong> Coordinación de actividades culturales o escolares.",
+                "• 🤝 <strong>Asesoría Comercial e Intermediación:</strong> Conectar productos locales con compradores."
+            ],
+            presupuesto: "<p>• <strong>Inversión inicial estimada:</strong> $150.000 a $400.000 COP para stock mínimo de prueba y empaques.</p>",
+            productividad: "<p>• Dedica las mañanas a llamadas de ventas y utiliza WhatsApp Business con catálogo integrado.</p>",
+            motivacional: "«Vender es servir y solucionar problemas para otros. Tu carisma personal y habilidad social no tienen techo.»",
+            consejo: "Crea tu catálogo en WhatsApp Business y compártelo entre tus contactos de confianza."
+        }
+    };
+
+    const data = datosPerfiles[perfilKey];
+
+    // Asignar textos a los campos
+    document.getElementById('talento-titulo').textContent = data.titulo;
+    document.getElementById('talento-desc').textContent = data.desc;
+
+    const ulIdeas = document.getElementById('talento-ideas');
+    ulIdeas.innerHTML = '';
+    data.ideas.forEach(item => {
+        const li = document.createElement('li');
+        li.innerHTML = item;
+        ulIdeas.appendChild(li);
+    });
+
+    document.getElementById('talento-presupuesto').innerHTML = data.presupuesto;
+    document.getElementById('talento-productividad').innerHTML = data.productividad;
+    document.getElementById('talento-motivacional').textContent = data.motivacional;
+    document.getElementById('talento-consejo').textContent = data.consejo;
+
+    // Mostrar el bloque de resultado y ocultar el formulario
+    document.getElementById('formulario-talento').classList.add('oculto');
+    const bloqueResultado = document.getElementById('resultado-talento-bloque');
+    bloqueResultado.classList.remove('oculto');
+    bloqueResultado.scrollIntoView({ behavior: 'smooth' });
+}
+
+function reiniciarTalento() {
+    const area = document.getElementById('texto-talento');
+    if(area) area.value = '';
+    document.getElementById('formulario-talento').classList.remove('oculto');
+    document.getElementById('resultado-talento-bloque').classList.add('oculto');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// BASE DE DATOS DE LAS 72 PREGUNTAS VOCACIONALES
+const bancoPreguntas = [
+    // Bloque 1 (1-12) -> Motivaciones y Estilo de Vida
+    { id: 1, texto: "1. ¿Sientes una fuerte necesidad de que tu trabajo diario tenga un propósito y un significado profundo para ti?", area: "soc" },
+    { id: 2, texto: "2. ¿Te motiva más el aprendizaje constante y adquirir nuevos conocimientos que recibir un salario alto?", area: "cie" },
+    { id: 3, texto: "3. ¿Te impulsa el deseo de dejar una huella positiva o un legado en la sociedad a través de lo que haces?", area: "soc" },
+    { id: 4, texto: "4. ¿Disfrutas enfrentando retos difíciles solo para demostrarte a ti mismo que puedes superarlos?", area: "tec" },
+    { id: 5, texto: "5. ¿Te consideras una persona highly ambiciosa que busca constantemente escalar posiciones y destacar?", area: "emp" },
+    { id: 6, texto: "6. ¿Prefieres un trabajo que te apasione emocionalmente aunque requiera grandes esfuerzos y sacrificios?", area: "art" },
+    { id: 7, texto: "7. ¿Te motiva la posibilidad de viajar y conocer diferentes culturas a través de tu profesión?", area: "art" },
+    { id: 8, texto: "8. ¿Te impulsa el deseo de tener autonomía total sobre tu tiempo y decisiones laborales?", area: "emp" },
+    { id: 9, texto: "9. ¿Te sientes satisfecho cuando logras organizar y estructurar tu vida personal y profesional con orden?", area: "emp" },
+    { id: 10, texto: "10. ¿Te motiva trabajar en proyectos vanguardistas que nadie más ha intentado antes?", area: "tec" },
+    { id: 11, texto: "11. ¿Valoras por encima de todo la estabilidad, la seguridad y la tranquilidad en tu estilo de vida?", area: "pra" },
+    { id: 12, texto: "12. ¿Te inspira ver el éxito y el crecimiento de las personas que te rodean?", area: "soc" },
+
+    // Bloque 2 (13-24) -> Trabajo en Equipo y Liderazgo
+    { id: 13, texto: "13. ¿Te sientes cómodo coordinando a un grupo de personas para alcanzar una meta común?", area: "emp" },
+    { id: 14, texto: "14. ¿Prefieres colaborar codo a codo con compañeros en lugar de trabajar completamente solo?", area: "soc" },
+    { id: 15, texto: "15. ¿Eres capaz de mediar y resolver desacuerdos o discusiones entre los miembros de un equipo?", area: "soc" },
+    { id: 16, texto: "16. ¿Te resulta fácil delegar responsabilidades en otros confiando en sus capacidades?", area: "emp" },
+    { id: 17, texto: "17. ¿Te gusta escuchar activamente las opiniones de los demás antes de tomar una decisión en grupo?", area: "soc" },
+    { id: 18, texto: "18. ¿Asumes la responsabilidad y el liderazgo de forma natural cuando un proyecto se queda sin guía?", area: "emp" },
+    { id: 19, texto: "19. ¿Disfrutas enseñando, capacitando o guiando a compañeros novatos o de menor experiencia?", area: "soc" },
+    { id: 20, texto: "20. ¿Te consideras un apoyo fundamental para mantener la buena energía y motivación del equipo?", area: "soc" },
+    { id: 21, texto: "21. ¿Prefieres un rol de apoyo o especialista técnico dentro de un equipo en lugar de ser el líder visible?", area: "tec" },
+    { id: 22, texto: "22. ¿Te resulta fácil adaptarte a las dinámicas de trabajo de diferentes tipos de personalidades?", area: "soc" },
+    { id: 23, texto: "23. ¿Te frustra cuando los miembros de un equipo no muestran el mismo compromiso que tú?", area: "emp" },
+    { id: 24, texto: "24. ¿Disfrutas participando en lluvias de ideas colectivas para crear proyectos?", area: "art" },
+
+    // Bloque 3 (25-36) -> Perfil Psicológico y Resiliencia
+    { id: 25, texto: "25. ¿Mantienes la calma y la claridad mental cuando trabajas bajo presión o con plazos muy ajustados?", area: "emp" },
+    { id: 26, texto: "26. ¿Te adaptas con facilidad cuando los planes o las reglas cambian repentinamente?", area: "tec" },
+    { id: 27, texto: "27. ¿Ves los errores y fracasos como valiosas oportunidades de aprendizaje en lugar de derrotas?", area: "cie" },
+    { id: 28, texto: "28. ¿Eres capaz de separar tus emociones personales de tus responsabilidades profesionales?", area: "emp" },
+    { id: 29, texto: "29. ¿Te consideras una persona detallista, metódica y perfeccionista con tus entregas?", area: "cie" },
+    { id: 30, texto: "30. ¿Disfrutas analizando problemas complejos desde cero desglosándolos paso a paso?", area: "cie" },
+    { id: 31, texto: "31. ¿Te sientes cómodo tomando decisiones importantes con información incompleta o incierta?", area: "emp" },
+    { id: 32, texto: "32. ¿Posees una gran paciencia para realizar tareas repetitivas o que requieren un rigor extremo?", area: "pra" },
+    { id: 33, texto: "33. ¿Te consideras una persona intuitiva que confía mucho en su primera impresión?", area: "art" },
+    { id: 34, texto: "34. ¿Prefieres entornos de trabajo dinámicos, acelerados y llenos de estímulos cambiantes?", area: "tec" },
+    { id: 35, texto: "35. ¿Te resulta fácil concentrarte profundamente en una tarea durante horas sin distraerte?", area: "cie" },
+    { id: 36, texto: "36. ¿Analizas de forma crítica y escéptica la información antes de darla por verdadera?", area: "cie" },
+
+    // Bloque 4 (37-48) -> Intereses Científicos, Tecnológicos y Analíticos
+    { id: 37, texto: "37. ¿Te apasiona comprender cómo funciona el cuerpo humano, la medicina o la salud biológica?", area: "soc" },
+    { id: 38, texto: "38. ¿Te atrae realizar experimentos científicos en laboratorios de química, física o biología?", area: "cie" },
+    { id: 39, texto: "39. ¿Disfrutas analizando datos numéricos masivos, estadísticas o tendencias de mercado?", area: "cie" },
+    { id: 40, texto: "40. ¿Te llama la atención la programación, el desarrollo de software o la inteligencia artificial?", area: "tec" },
+    { id: 41, texto: "41. ¿Te interesa el diseño y funcionamiento de aparatos electrónicos, robótica o maquinaria?", area: "tec" },
+    { id: 42, texto: "42. ¿Te apasiona la investigación científica profunda para descubrir nuevas leyes o curas?", area: "cie" },
+    { id: 43, texto: "43. ¿Te atrae la ciberseguridad, la protección de redes y el manejo seguro de información?", area: "tec" },
+    { id: 44, texto: "44. ¿Te gusta el estudio del medio ambiente, la ecología y las energías sustentables?", area: "pra" },
+    { id: 45, texto: "45. ¿Te interesa la arquitectura, el diseño de estructuras civiles o la ingeniería de materiales?", area: "tec" },
+    { id: 46, texto: "46. ¿Disfrutas resolviendo acertijos lógicos, algoritmos o problemas matemáticos abstractos?", area: "cie" },
+    { id: 47, texto: "47. ¿Te llama la atención la astronomía, la astrofísica o las ciencias espaciales?", area: "cie" },
+    { id: 48, texto: "48. ¿Te interesa la genética, la biotecnología o la manipulación de compuestos científicos?", area: "cie" },
+
+    // Bloque 5 (49-60) -> Creatividad, Arte y Comunicación
+    { id: 49, texto: "49. ¿Te apasiona el diseño gráfico, la ilustración, la pintura o las artes plásticas?", area: "art" },
+    { id: 50, texto: "50. ¿Disfrutas escribiendo historias, guiones, artículos de opinión o contenidos creativos?", area: "art" },
+    { id: 51, texto: "51. ¿Te interesa la producción audiovisual, el cine, la fotografía o la edición multimedia?", area: "art" },
+    { id: 52, texto: "52. ¿Te atrae el diseño de modas, la estética visual o la decoración de espacios?", area: "art" },
+    { id: 53, texto: "53. ¿Te sientes cómodo hablando en público, actuando, conduciendo programas o comunicando?", area: "art" },
+    { id: 54, texto: "54. ¿Te gusta crear estrategias de publicidad persuasiva o campañas de marketing digital?", area: "emp" },
+    { id: 55, texto: "55. ¿Te interesa el diseño de experiencias de usuario (UI/UX) o la interfaz de aplicaciones?", area: "tec" },
+    { id: 56, texto: "56. ¿Disfrutas creando contenidos dinámicos para redes sociales, blogs o plataformas digitales?", area: "art" },
+    { id: 57, texto: "57. ¿Te apasiona la música, ya sea componiendo, tocando instrumentos o produciendo audio?", area: "art" },
+    { id: 58, texto: "58. ¿Te atrae la traducción de idiomas, la lingüística y la comunicación intercultural?", area: "art" },
+    { id: 59, texto: "59. ¿Te gusta organizar eventos artísticos, culturales, festivales o exposiciones?", area: "emp" },
+    { id: 60, texto: "60. ¿Prefieres profesiones cuyo centro sea la imaginación y la originalidad por encima de todo?", area: "art" },
+
+    // Bloque 6 (61-72) -> Negocios, Impacto Social y Estilo de Vida
+    { id: 61, texto: "61. ¿Te atrae la idea de fundar, administrar y dirigir tu propio negocio o empresa?", area: "emp" },
+    { id: 62, texto: "62. ¿Te gusta gestionar presupuestos, finanzas, inversiones o la economía de proyectos?", area: "emp" },
+    { id: 63, texto: "63. ¿Te consideras una persona con gran talento para la negociación, las ventas y la persuasión?", area: "emp" },
+    { id: 64, texto: "64. ¿Te interesa el derecho, las leyes, la justicia y la resolución legal de conflictos?", area: "soc" },
+    { id: 65, texto: "65. ¿Disfrutas enseñando, dando clases y transmitiendo conocimiento a otras personas?", area: "soc" },
+    { id: 66, texto: "66. ¿Te motiva profundamente el trabajo social, el voluntariado y la ayuda a comunidades vulnerables?", area: "soc" },
+    { id: 67, texto: "67. ¿Te atrae la política, la gestión pública, la diplomacia y el servicio a la ciudadanía?", area: "soc" },
+    { id: 68, texto: "68. ¿Te interesa la psicología clínica, el bienestar emocional o el desarrollo humano?", area: "soc" },
+    { id: 69, texto: "69. ¿Te gusta trabajar al aire libre, en contacto directo con la naturaleza o en actividades de campo?", area: "pra" },
+    { id: 70, texto: "70. ¿Te atrae la gastronomía, la alta cocina, la administración hotelera o el turismo?", area: "pra" },
+    { id: 71, texto: "71. ¿Te interesa la seguridad ciudadana, las fuerzas del orden, la aviación o la logística de transportes?", area: "pra" },
+    { id: 72, texto: "72. ¿Prefieres un estilo de vida profesional flexible, remoto y con control de tus horarios?", area: "tec" }
+];
+
+// GENERAR DINÁMICAMENTE LAS 72 PREGUNTAS EN EL HTML
+document.addEventListener('DOMContentLoaded', () => {
+    bancoPreguntas.forEach((p) => {
+        const bloqueNum = Math.ceil(p.id / 12);
+        const contenedorBloque = document.getElementById(`preguntas-b${bloqueNum}`);
+        if (contenedorBloque) {
+            const tarjetaDiv = document.createElement('div');
+            tarjetaDiv.className = 'tarjeta';
+            tarjetaDiv.innerHTML = `
+                <p class="font-semibold mb-3">${p.texto}</p>
+                <div class="space-y-2">
+                    <label class="flex items-center gap-3 p-2 rounded-lg hover:bg-white/5 cursor-pointer text-sm">
+                        <input type="radio" name="p${p.id}" value="A" data-area="${p.area}" class="w-4 h-4 accent-azul"> A) Totalmente de acuerdo / Me describe perfectamente
+                    </label>
+                    <label class="flex items-center gap-3 p-2 rounded-lg hover:bg-white/5 cursor-pointer text-sm">
+                        <input type="radio" name="p${p.id}" value="B" data-area="${p.area}" class="w-4 h-4 accent-azul"> B) Parcialmente de acuerdo / Me atrae moderadamente
+                    </label>
+                    <label class="flex items-center gap-3 p-2 rounded-lg hover:bg-white/5 cursor-pointer text-sm">
+                        <input type="radio" name="p${p.id}" value="C" data-area="${p.area}" class="w-4 h-4 accent-azul"> C) Poco de acuerdo / Prefiero evitarlo
+                    </label>
+                    <label class="flex items-center gap-3 p-2 rounded-lg hover:bg-white/5 cursor-pointer text-sm">
+                        <input type="radio" name="p${p.id}" value="D" data-area="${p.area}" class="w-4 h-4 accent-azul"> D) En desacuerdo total / No va conmigo
+                    </label>
+                </div>
+            `;
+            contenedorBloque.appendChild(tarjetaDiv);
+        }
+    });
+});
+
+// FUNCIÓN PARA CAMBIAR DE PÁGINA
+function irA(idPagina) {
+    document.querySelectorAll('.pagina').forEach(pag => pag.classList.remove('activa'));
+    document.getElementById(idPagina).classList.add('activa');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// CALCULAR RESULTADOS DE LAS 72 PREGUNTAS
+function calcularResultados() {
+    let puntos = { emp: 0, soc: 0, cie: 0, tec: 0, art: 0, pra: 0 };
+    let respondidas = 0;
+
+    bancoPreguntas.forEach(p => {
+        const seleccion = document.querySelector(`input[name="p${p.id}"]:checked`);
+        if (seleccion) {
+            respondidas++;
+            const valor = seleccion.value;
+            const area = seleccion.getAttribute('data-area');
+            
+            let peso = 0;
+            if (valor === 'A') peso = 3;
+            else if (valor === 'B') peso = 2;
+            else if (valor === 'C') peso = 1;
+            else if (valor === 'D') peso = 0;
+
+            if (puntos[area] !== undefined) {
+                puntos[area] += peso;
+            }
+        }
+    });
+
+    if (respondidas < 72) {
+        alert(`⚠️ Has respondido ${respondidas} de 72 preguntas. Por favor respóndelas todas para ver tus resultados.`);
+        return;
+    }
+
+    let porcentajes = {
+        emp: Math.min(100, Math.round((puntos.emp / 54) * 100)),
+        soc: Math.min(100, Math.round((puntos.soc / 54) * 100)),
+        cie: Math.min(100, Math.round((puntos.cie / 54) * 100)),
+        tec: Math.min(100, Math.round((puntos.tec / 54) * 100)),
+        art: Math.min(100, Math.round((puntos.art / 54) * 100)),
+        pra: Math.min(100, Math.round((puntos.pra / 54) * 100))
+    };
+
+    setTimeout(() => {
+        for (let key in porcentajes) {
+            const barra = document.getElementById(`barra-${key}`);
+            const porc = document.getElementById(`porc-${key}`);
+            if (barra && porc) {
+                barra.style.width = porcentajes[key] + '%';
+                porc.textContent = porcentajes[key] + '%';
+            }
+        }
+    }, 300);
+
+    let areaDominante = Object.entries(porcentajes).sort((a, b) => b[1] - a[1])[0][0];
+
+    const perfiles = {
+        emp: {
+            nombre: 'Perfil Empresarial y Administrativo',
+            desc: 'Tienes una marcada tendencia hacia el liderazgo, la gestión de recursos, la estrategia comercial y la dirección de proyectos o empresas.',
+            carreras: ['Administración de Empresas', 'Contaduría Pública', 'Derecho', 'Mercadeo y Ventas', 'Finanzas y Banca']
+        },
+        soc: {
+            nombre: 'Perfil Social y de la Salud',
+            desc: 'Tu vocación se orienta profundamente al bienestar humano, el cuidado de la salud, la educación y el apoyo a las comunidades vulnerables.',
+            carreras: ['Medicina', 'Enfermería', 'Psicología', 'Trabajo Social', 'Odontología', 'Licenciatura en Educación']
+        },
+        cie: {
+            nombre: 'Perfil de Ciencias Básicas e Investigación',
+            desc: 'Te destaca el rigor analítico, el gusto por la experimentación, el método científico y la resolución de problemas complejos mediante la lógica.',
+            carreras: ['Ingeniería de Sistemas', 'Ciencia de Datos', 'Biología / Biotecnología', 'Matemáticas y Estadística']
+        },
+        tec: {
+            nombre: 'Perfil Tecnológico e Ingeniería',
+            desc: 'Te apasiona la innovación aplicada, el desarrollo de software, la robótica y la construcción de soluciones técnicas tangibles.',
+            carreras: ['Ingeniería de Sistemas', 'Ingeniería Civil', 'Ingeniería Industrial', 'Desarrollo de Software SENA', 'Ingeniería Electrónica']
+        },
+        art: {
+            nombre: 'Perfil Artístico y Comunicación',
+            desc: 'Posees gran sensibilidad estética, talento creativo para la expresión visual, multimedia, redacción y transmisión de ideas originales.',
+            carreras: ['Diseño Gráfico', 'Comunicación Social y Periodismo', 'Producción Multimedia', 'Diseño Industrial']
+        },
+        pra: {
+            nombre: 'Perfil Práctico y Agropecuario',
+            desc: 'Valoras el trabajo de campo, la producción sostenible, los oficios técnicos especializados y ver resultados físicos inmediatos de tu esfuerzo.',
+            carreras: ['Ingeniería Agronómica', 'Medicina Veterinaria y Zootecnia', 'Producción Agropecuaria SENA', 'Gestión Ambiental']
+        }
+    };
+
+    const perfil = perfiles[areaDominante];
+    document.getElementById('nombre-perfil').textContent = perfil.nombre;
+    document.getElementById('descripcion-perfil').textContent = perfil.desc;
+
+    const listaCarreras = document.getElementById('lista-carreras');
+    listaCarreras.innerHTML = '';
+    perfil.carreras.forEach(c => {
+        const etiqueta = document.createElement('span');
+        etiqueta.className = 'etiqueta bg-azul/20 text-azul';
+        etiqueta.textContent = c;
+        listaCarreras.appendChild(etiqueta);
+    });
+
+    document.getElementById('formulario-test').classList.add('oculto');
+    document.getElementById('resultados-test').classList.remove('oculto');
+}
+
+// REINICIAR TEST
+function reiniciarTest() {
+    document.querySelectorAll('input[type="radio"]').forEach(i => i.checked = false);
+    document.getElementById('formulario-test').classList.remove('oculto');
+    document.getElementById('resultados-test').classList.add('oculto');
+    document.querySelectorAll('.relleno').forEach(b => b.style.width = '0%');
+    document.querySelectorAll('[id^="porc-"]').forEach(p => p.textContent = '0%');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>
